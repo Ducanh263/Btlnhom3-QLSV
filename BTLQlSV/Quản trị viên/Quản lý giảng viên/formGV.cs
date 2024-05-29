@@ -1,0 +1,175 @@
+﻿using BTLQLSV;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace BTLQlSV
+{
+    public partial class formGV : Form
+    {
+        private string mgv;
+        private string nguoithucthi = "admin";
+        public formGV(string mgv)
+        {
+            this.mgv = mgv;
+            InitializeComponent();
+        }
+
+        private void formGV_Load(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(mgv))
+            {
+                this.Text = "Thêm mới giảng viên";
+            }
+            else
+            {
+                this.Text = "Cập nhập giảng viên";
+                var r = new Database().Select("selectgv '" + mgv + "'");
+                //MessageBox.Show(r[0].ToString());Load thành công
+                //Set các giá trị vào component của form
+                txtHo.Text = r["ho"].ToString();
+                txtTendem.Text = r["tendem"].ToString();
+                txtTen.Text = r["ten"].ToString();
+                txtNgaysinh.Text = r["ngaysinh"].ToString();
+                if (int.Parse(r["gioitinh"].ToString()) == 1)
+                {
+                    RdoNam.Checked = true;
+                }
+                else
+                {
+                    RdoNu.Checked = true;
+                }
+                txtDiachi.Text = r["diachi"].ToString();
+                txtDienthoai.Text = r["dienthoai"].ToString();
+                txtEmail.Text = r["email"].ToString();
+            }
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            //btnLuu sẽ xử lý hai tình huống:
+            //1. Thêm mới sinh viên (nếu msv chưa tồn tại)
+            //2. Cập nhật sinh viên (nếu tồn tại giá trị msv)
+            //Cả hai trường hợp các giá trị đều như nhau tuy nhiên khi cập nhật cần quan tâm tới mã sinh viên
+
+            string sql = "";
+            string ho = txtHo.Text;
+            string tendem = txtTendem.Text;
+            string ten = txtTen.Text;
+            // Vì ngày sinh trong MaskedTextBox dưới dạng dd/mm/yy mà trong SQL ta để dưới dạng yy-mm-dd nên cần xét lại định dạng
+            DateTime ngaysinh;
+            try
+            {
+                ngaysinh = DateTime.ParseExact(txtNgaysinh.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ngày sinh không hợp lệ");
+                txtNgaysinh.Select(); // Trỏ chuột về txtNgaysinh
+                return; // Không thực hiện tiếp câu lệnh phía dưới
+            }
+            string gioitinh = RdoNam.Checked ? "1" : "0"; // Nếu radio check ô nam thì là 1, ngược lại là 0
+            string diachi = txtDiachi.Text;
+            string dienthoai = txtDienthoai.Text;
+            string email = txtEmail.Text;
+
+            // Khai báo danh sách tham số bằng class CustomParameter
+            List<CustomParameter> IstPara = new List<CustomParameter>();
+            if (string.IsNullOrEmpty(mgv)) // Thêm mới sinh viên
+            {
+                sql = "AddNewGiangVien"; // Gọi tới procedure thêm mới
+                IstPara.Add(new CustomParameter()
+                {
+                    Key = "@nguoitao",
+                    Value = nguoithucthi
+                });
+            }
+            else // Nếu cập nhật sinh viên
+            {
+                sql = "UpdateGiangVien"; // Gọi tới procedure cập nhật
+                IstPara.Add(new CustomParameter()
+                {
+                    Key = "@nguoicapnhat",
+                    Value = nguoithucthi
+                });
+                IstPara.Add(new CustomParameter()
+                {
+                    Key = "@magiaovien",
+                    Value = mgv
+                });
+            }
+
+            IstPara.Add(new CustomParameter()
+            {
+                Key = "@ho",
+                Value = ho
+            });
+            IstPara.Add(new CustomParameter()
+            {
+                Key = "@tendem",
+                Value = tendem
+            });
+            IstPara.Add(new CustomParameter()
+            {
+                Key = "@ten",
+                Value = ten
+            });
+            IstPara.Add(new CustomParameter()
+            {
+                Key = "@ngaysinh",
+                Value = ngaysinh.ToString("yyyy-MM-dd")
+            });
+            IstPara.Add(new CustomParameter()
+            {
+                Key = "@gioitinh",
+                Value = gioitinh
+            });
+            IstPara.Add(new CustomParameter()
+            {
+                Key = "@diachi",
+                Value = diachi
+            });
+            IstPara.Add(new CustomParameter()
+            {
+                Key = "@dienthoai",
+                Value = dienthoai
+            });
+            IstPara.Add(new CustomParameter()
+            {
+                Key = "@email",
+                Value = email
+            });
+
+            var rs = new Database().Execute(sql, IstPara);
+            if (rs == 1)//nếu thực hiện thành công
+            {
+                if (string.IsNullOrEmpty(mgv))//nếu thêm mới
+                {
+
+                    MessageBox.Show("Thêm mơi giảng viên thành công");
+                }
+                else//Nếu cập nhập
+                {
+                    MessageBox.Show("Cập nhập giảng viên thành công");
+                }
+                this.Dispose();//Đóng form
+            }
+            else
+            {
+                MessageBox.Show("Thực thi thất bại");
+            }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+    }
+}

@@ -1,0 +1,14 @@
+Sau khi tải project về:
+B1: Mở sqlsever management
+Mở file DatabaseQLSV
+Chỉnh sửa đường dẫn theo root Directori Vd C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSEVER\MSSQL
+NAME = N'Quanlysinhvienhumg', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSEVER\MSSQL\DATA\Quanlysinhvienhumg.mdf' , SIZE = 73728KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'Quanlysinhvienhumg_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSEVER\MSSQL\DATA\Quanlysinhvienhumg_log.ldf' , SIZE = 73728KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT, LEDGER = OFF
+GO
+sau đó execute để tiến hành thêm sql
+B2 Mở file BTLSQSV  trong visual studio
+vào class Database trong dự án đổi chuỗi connectionString theo sql sever của mình vd:
+connectionString = @"Data Source=ducanh\DUCANH; Initial Catalog = Quanlysinhvienhumg; User ID = sa; Password = 123123";
+Phần hướng dẫn chạy dự án em đã gửi trong link trên team!!!

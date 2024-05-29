@@ -1,0 +1,30 @@
+a.Nội dung chương trình được chỉnh sửa
+-)Chỉnh sửa chức năng đăng xuất:
+	Ban đầu là chức năng thoát (thoát khỏi chương trình)-> sau đó được sửa đổi thành đăng xuất(đăng xuất tài khoản hiện tại chuyển về 
+trang đăng nhập để đăng nhập tài khoản khác)
+-)Thêm mới chức năng sắp xếp lịch thi tự động theo thuật toán tô màu đồ thị
+	Ý tưởng: Sử dung thuật toán tô màu đồ thị để sắp xếp lịch thi tự động:
+	Sau khi hoàn thành chức năng sắp xếp lịch thi tự động sẽ có:
+		+)Xếp lịch thi sao cho không có sinh viên nào cùng thi 2 môn một thời điểm
+		+)Sinh viên không thi quá nhiều môn trong  một ngày thi
+		+)Số ca thi trong một ngày không vượt quá số phòng thi hiện có
+		+)Chọn phòng thi sao cho số phòng được chọn không vượt quá số lượng sinh viên hoặc số phòng khả dụng
+		+)Lịch thi được sắp xếp sao cho số ngày thi là tối ưu tức là số ngày thi là nhỏ nhất
+        Sau khi sếp xong lịch thi tự động:
+		+)Tiến hành sắp xếp sinh viên vào phòng thi phù hợp chọn giảng viên coi thi...
+ 	Sau khu lịch thi đã xếp xong:
+		+)Giảng viên: Xem lịch coi thi
+		+)Sinh viên: Xem lịch thi
+-)Thêm chức năng xem thời khóa biểu:
+	+)Sau khi sinh viên đăng ký xong môn học thì có thể xem thời khóa biểu và giảng viên của lớp sinh viên
+đã đăng ký cũng xem được thời khóa biểu giảng dạy của bản thân
+	+)Thời khóa biểu được vẽ trên datagridview gồm các thông tin liên qua đến thời khóa biểu và được tô màu để
+dễ quan sát
+-)Thêm chức năng điểm danh cho giảng viên
+	+)Khi mở trang điểm danh sẽ hiện lên danh sách sinh viên của nhóm được chọn
+giảng viên có thể chọn 1 trong 3 trạng thái để tiến hành điểm danh (DH: đi học, V: vắng, VP: vắng phép)
+	+)Giảng viên có thể xem lại những ngày điểm danh trước nhưng không thể chỉnh sửa
+
+b.Lê Đức Anh chỉnh sửa chức năng xếp lịch thi, thời khóa biểu
+Đỗ Cao Cường: Đăng xuất
+Lê Tuấn Long: Điểm danh

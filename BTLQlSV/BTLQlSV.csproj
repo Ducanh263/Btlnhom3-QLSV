@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC01EEFC-739D-4307-B775-BAEBFB3EA4DF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BTLQlSV</RootNamespace>
+    <AssemblyName>BTLQlSV</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Course.cs" />
+    <Compile Include="CustomParameter.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="formADTDSXLichThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formADTDSXLichThi.Designer.cs">
+      <DependentUpon>formADTDSXLichThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formthemlichthisaukhisapxepcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formthemlichthisaukhisapxepcs.Designer.cs">
+      <DependentUpon>formthemlichthisaukhisapxepcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formXemLichThiGv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formXemLichThiGv.Designer.cs">
+      <DependentUpon>formXemLichThiGv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý sinh viên\formLopSVNhaphoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý sinh viên\formLopSVNhaphoc.Designer.cs">
+      <DependentUpon>formLopSVNhaphoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sinh viên\Thông tin sinh viên\formThongtinsinhvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sinh viên\Thông tin sinh viên\formThongtinsinhvien.Designer.cs">
+      <DependentUpon>formThongtinsinhvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giảng viên\Điểm danh\formDiemDanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giảng viên\Điểm danh\formDiemDanh.Designer.cs">
+      <DependentUpon>formDiemDanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formdoimatkhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formdoimatkhau.Designer.cs">
+      <DependentUpon>formdoimatkhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giảng viên\Điểm danh\formDSLCDiemDanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giảng viên\Điểm danh\formDSLCDiemDanh.Designer.cs">
+      <DependentUpon>formDSLCDiemDanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formThoiKhoaBieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formThoiKhoaBieu.Designer.cs">
+      <DependentUpon>formThoiKhoaBieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formDangNhap.Designer.cs">
+      <DependentUpon>formDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý giảng viên\formDSGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý giảng viên\formDSGV.Designer.cs">
+      <DependentUpon>formDSGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý lớp học\formDSLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý lớp học\formDSLopHoc.Designer.cs">
+      <DependentUpon>formDSLopHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý môn học\formDSMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý môn học\formDSMH.Designer.cs">
+      <DependentUpon>formDSMH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý sinh viên\formKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý sinh viên\formKhoa.Designer.cs">
+      <DependentUpon>formKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý sinh viên\formNganh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý sinh viên\formNganh.Designer.cs">
+      <DependentUpon>formNganh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý sinh viên\formQuanLyKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý sinh viên\formQuanLyKhoa.Designer.cs">
+      <DependentUpon>formQuanLyKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sinh viên\Đăng ký lớp học\formDSMHChuaDK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sinh viên\Đăng ký lớp học\formDSMHChuaDK.Designer.cs">
+      <DependentUpon>formDSMHChuaDK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sinh viên\Đăng ký lớp học\formDSMHDaDK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sinh viên\Đăng ký lớp học\formDSMHDaDK.Designer.cs">
+      <DependentUpon>formDSMHDaDK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý sinh viên\formDSSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý sinh viên\formDSSV.Designer.cs">
+      <DependentUpon>formDSSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giảng viên\Chấm điểm\formDSSVLCanCham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giảng viên\Chấm điểm\formDSSVLCanCham.Designer.cs">
+      <DependentUpon>formDSSVLCanCham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formGT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formGT.Designer.cs">
+      <DependentUpon>formGT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý giảng viên\formGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý giảng viên\formGV.Designer.cs">
+      <DependentUpon>formGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sinh viên\Quản lý điểm\formKetQuaHT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sinh viên\Quản lý điểm\formKetQuaHT.Designer.cs">
+      <DependentUpon>formKetQuaHT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý lớp học\formLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý lớp học\formLopHoc.Designer.cs">
+      <DependentUpon>formLopHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý môn học\formMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý môn học\formMonHoc.Designer.cs">
+      <DependentUpon>formMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giảng viên\Chấm điểm\formQuanLyLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giảng viên\Chấm điểm\formQuanLyLop.Designer.cs">
+      <DependentUpon>formQuanLyLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý sinh viên\formSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quản trị viên\Quản lý sinh viên\formSinhVien.Designer.cs">
+      <DependentUpon>formSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formADTDSXLichThi.resx">
+      <DependentUpon>formADTDSXLichThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formthemlichthisaukhisapxepcs.resx">
+      <DependentUpon>formthemlichthisaukhisapxepcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formXemLichThiGv.resx">
+      <DependentUpon>formXemLichThiGv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản trị viên\Quản lý sinh viên\formLopSVNhaphoc.resx">
+      <DependentUpon>formLopSVNhaphoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sinh viên\Thông tin sinh viên\formThongtinsinhvien.resx">
+      <DependentUpon>formThongtinsinhvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giảng viên\Điểm danh\formDiemDanh.resx">
+      <DependentUpon>formDiemDanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formdoimatkhau.resx">
+      <DependentUpon>formdoimatkhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giảng viên\Điểm danh\formDSLCDiemDanh.resx">
+      <DependentUpon>formDSLCDiemDanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formThoiKhoaBieu.resx">
+      <DependentUpon>formThoiKhoaBieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formDangNhap.resx">
+      <DependentUpon>formDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản trị viên\Quản lý giảng viên\formDSGV.resx">
+      <DependentUpon>formDSGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản trị viên\Quản lý lớp học\formDSLopHoc.resx">
+      <DependentUpon>formDSLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản trị viên\Quản lý môn học\formDSMH.resx">
+      <DependentUpon>formDSMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản trị viên\Quản lý sinh viên\formKhoa.resx">
+      <DependentUpon>formKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản trị viên\Quản lý sinh viên\formNganh.resx">
+      <DependentUpon>formNganh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản trị viên\Quản lý sinh viên\formQuanLyKhoa.resx">
+      <DependentUpon>formQuanLyKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sinh viên\Đăng ký lớp học\formDSMHChuaDK.resx">
+      <DependentUpon>formDSMHChuaDK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sinh viên\Đăng ký lớp học\formDSMHDaDK.resx">
+      <DependentUpon>formDSMHDaDK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản trị viên\Quản lý sinh viên\formDSSV.resx">
+      <DependentUpon>formDSSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giảng viên\Chấm điểm\formDSSVLCanCham.resx">
+      <DependentUpon>formDSSVLCanCham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formGT.resx">
+      <DependentUpon>formGT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản trị viên\Quản lý giảng viên\formGV.resx">
+      <DependentUpon>formGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sinh viên\Quản lý điểm\formKetQuaHT.resx">
+      <DependentUpon>formKetQuaHT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản trị viên\Quản lý lớp học\formLopHoc.resx">
+      <DependentUpon>formLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản trị viên\Quản lý môn học\formMonHoc.resx">
+      <DependentUpon>formMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giảng viên\Chấm điểm\formQuanLyLop.resx">
+      <DependentUpon>formQuanLyLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quản trị viên\Quản lý sinh viên\formSinhVien.resx">
+      <DependentUpon>formSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trang chu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anh %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qlsv.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
